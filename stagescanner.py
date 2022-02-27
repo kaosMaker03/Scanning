@@ -84,7 +84,7 @@ def port_scanner():
 	
 	elif port_type == "udp":
 		#stage 1
-		sp.call("nmap -T4 -sU -p- {} -oX {}/XML/udp_scan1.xml -oN {}/nmap/udp_scan1.nmap -oG {}/gnmap/udp_scan1.gnmap".format(ip_addresse, file_name, file_name, file_name), shell = True)
+		sp.call("nmap -T4 -sU {} -oX {}/XML/udp_scan1.xml -oN {}/nmap/udp_scan1.nmap -oG {}/gnmap/udp_scan1.gnmap".format(ip_addresse, file_name, file_name, file_name), shell = True)
 		
 		with open("{}/nmap/udp_scan1.nmap".format(file_name), "r") as port_file:			
 			for line in port_file:
